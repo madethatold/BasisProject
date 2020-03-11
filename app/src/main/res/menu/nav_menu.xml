@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_share"
+            android:title="share"
+            android:icon="@drawable/icon_share"/>
+        <item
+            android:id="@+id/nav_setting"
+            android:title="setting"
+            android:icon="@drawable/icon_setting"/>
+        <item
+            android:id="@+id/nav_order"
+            android:title="order"
+            android:icon="@drawable/icon_order_unread"/>
+        <item
+            android:id="@+id/nav_search"
+            android:title="search"
+            android:icon="@drawable/icon_search"/>
+        <item
+            android:id="@+id/nav_international"
+            android:title="international"
+            android:icon="@drawable/icon_international"/>
+
+    </group>
+</menu>

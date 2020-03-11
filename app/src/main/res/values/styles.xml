@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+
     <style name="MyProgressBar">
         <item name="android:indeterminateDrawable">
             @drawable/bg_progress
@@ -15,6 +17,8 @@
             true
         </item>
     </style>
+
+
     <style name="AppTheme_1" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="colorPrimary">
             @color/colorPrimary
@@ -25,6 +29,9 @@
         <item name="colorAccent">
             @color/colorAccent
         </item>
+    </style>
+    <style name="FruitActivityTheme" parent="AppTheme_1">
+
     </style>
 
 </resources>
