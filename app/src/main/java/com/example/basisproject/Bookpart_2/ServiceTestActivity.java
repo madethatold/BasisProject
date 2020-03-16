@@ -17,6 +17,7 @@ public class ServiceTestActivity extends AppCompatActivity implements View.OnCli
     private Button btnStopService;
     private Button btnBindService;
     private Button btnUnbindService;
+
     private MyService.DownloadBinder downloadBinder;
 
     private ServiceConnection connection = new ServiceConnection() {

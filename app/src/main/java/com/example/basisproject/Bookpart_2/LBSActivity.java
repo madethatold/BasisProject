@@ -173,6 +173,8 @@ public class LBSActivity extends AppCompatActivity {
         super.onPause();
         mapView.onPause();
     }
+
+
     private void navigateTo(BDLocation location){
 
         if(isFirstLocate){

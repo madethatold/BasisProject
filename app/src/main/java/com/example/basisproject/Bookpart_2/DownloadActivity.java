@@ -63,10 +63,7 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
         }
         switch (view.getId()) {
             case R.id.btn_start_download:
-                String url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=" +
-                        "1535868543461&di=9d49c6cd4d161e0f4d09795fe6b5ac37&imgtype=0&src=" +
-                        "http%3A%2F%2Fphotocdn.sohu.com%" +
-                        "2F20151013%2Fmp35444706_1444730447601_1_th.jpeg";
+                String url = "http://raw.githubusercentent.com/guolindev/eclipse/master/eclipse-inst-win64.exe";
                 downloadBinder.startDownload(url);
                 break;
             case R.id.btn_pause_download:

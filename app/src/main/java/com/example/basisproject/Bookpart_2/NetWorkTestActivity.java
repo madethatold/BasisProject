@@ -48,7 +48,7 @@ public class NetWorkTestActivity extends AppCompatActivity {
                 try{
                     OkHttpClient client = new OkHttpClient();//实例化
                     Request request = new Request.Builder()//创建Request实例，用以发起Http请求
-                            .url("https://www.baidu.com")//目标的网络地址
+                            .url("https://www.hao123.com")//目标的网络地址
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();

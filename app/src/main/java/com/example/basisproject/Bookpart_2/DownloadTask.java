@@ -21,14 +21,14 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     public static final int TYPE_PAUSED = 2;
     public static final int TYPE_CANCELED = 3;
 
-    private com.example.basisproject.Bookpart_2.DownloadListener listener;
+    private DownloadListener listener;
     private boolean isCanceled = false;
     private boolean isPaused = false;
     private int lastProgress;
 
     //在DownloadTask的构造函数中传入刚刚定义的DownloadListener参数。
     public DownloadTask(DownloadListener listener) {
-        this.listener = (com.example.basisproject.Bookpart_2.DownloadListener) listener;
+        this.listener =listener;
     }
 
     @Override

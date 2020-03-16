@@ -16,6 +16,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.example.basisproject.MainActivity;
 import com.example.basisproject.R;
+import com.example.basisproject.util.NotificationUtil;
 
 import java.io.File;
 
@@ -36,22 +37,33 @@ public class DownloadService extends Service {
 
         @Override
         public void onSuccess() {
-
+            downloadTask = null;
+            //下载成功时将前台服务通知关闭，并创建一个下载成功的通知
+            stopForeground(true); //关闭前台服务
+            getNotificationManager().notify(1, getNotification("Download success", -1));
+            Toast.makeText(DownloadService.this, "Download Success", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onFailed() {
-
+            downloadTask = null;
+            //下载失败将前台通知关闭，并创建一个下载失败的通知
+            stopForeground(true);
+            getNotificationManager().notify(1, getNotification("Download failed", -1));
+            Toast.makeText(DownloadService.this, "Download Failed", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onPaused() {
-
+            downloadTask = null;
+            Toast.makeText(DownloadService.this, "Download Paused", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onCanceled() {
-
+            downloadTask = null;
+            stopForeground(true);
+            Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_LONG).show();
         }
 
     };

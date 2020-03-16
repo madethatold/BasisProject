@@ -12,10 +12,12 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 import com.example.basisproject.R;
+import com.example.basisproject.util.NotificationUtil;
 
 public class MyService extends Service {
 
 
+    //服务于活动之间联系
     private DownloadBinder mBinder = new DownloadBinder();
 
     static class DownloadBinder extends Binder {
@@ -34,17 +36,13 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.d("MyService", "服务已创建");
-        Intent intent = new Intent(this,ServiceTestActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(this,0,intent,0);
-        Notification notification = new NotificationCompat.Builder(this)
-                .setContentTitle("this is content title")
-                .setContentText("this is content text")
-                .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
-                .setContentIntent(pi)
-                .build();
-        startForeground(1,notification);
+
+        //前台服务
+        Intent intent=new Intent(this,ServiceTestActivity.class);
+        PendingIntent pi=PendingIntent.getActivity(this,0,intent,0);
+        NotificationUtil notificationUtil=new NotificationUtil(MyService.this);
+        notificationUtil.sendNotification("tile","content",pi);
+
     }
 
     /*在服务每次启动时候调用*/
@@ -57,6 +55,7 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.d("MyService", "服务已销毁 ");
     }
 
 
