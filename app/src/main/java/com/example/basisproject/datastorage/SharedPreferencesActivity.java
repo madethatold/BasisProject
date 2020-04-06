@@ -30,7 +30,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
         mtvContent=findViewById(R.id.tv_show);
 
         //存
-        mSharedPreferences=getSharedPreferences("anything",MODE_PRIVATE);
+        mSharedPreferences=getSharedPreferences("anything",MODE_PRIVATE);//指定文件名为anything
         mEditor=mSharedPreferences.edit();
 
         mbtnSave.setOnClickListener(new View.OnClickListener() {

@@ -17,6 +17,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             +"pages integer,"
             +"name text)";
 
+    public static final String CREATE_CATEGORY="create table Category("
+            +"id integer primary key autoincrement,"
+            +"category_name text,"
+            +"category_code integer)";
+
     private Context context;
 
     public MyDatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -25,8 +30,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_BOOK);//执行建表语句
-        ToastUtil.showMsg(context,"create success");
+        //创建数据库sql语句 并 执行,相当于初始化数据库，这里是新建了一张表
+        //这个方法继承自SQLiteOpenHelper,会自动调用  也就是 会 当新建了一个DatabaseHelper对象时，就会m=默认新建一张表，表里存着name
+        String sql = "create table user(name varchar(20))";
+        db.execSQL(sql);
     }
 
     @Override

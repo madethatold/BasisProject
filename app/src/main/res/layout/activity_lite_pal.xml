@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="80dp"
+    android:layout_marginBottom="50dp"
+    >
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_create_database"
+        android:text="create"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/et_insert_name"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:hint="name"/>
+        <Button
+            android:id="@+id/btn_insert_name"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="insert"/>
+        <Button
+            android:id="@+id/btn_clear_insert"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="clear"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_update_before_name"
+            android:layout_width="0dp"
+            android:layout_weight="2.5"
+            android:layout_height="wrap_content"
+            android:hint="update_before_name" />
+
+        <EditText
+            android:id="@+id/et_update_after_name"
+            android:layout_width="0dp"
+            android:layout_weight="2.5"
+            android:layout_height="wrap_content"
+            android:hint="update_after_name" />
+
+        <Button
+            android:id="@+id/btn_update_button_name"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="update" />
+
+        <Button
+            android:id="@+id/btn_clear_update_button_name"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="clear" />
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/btn_query_litepal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="query"/>
+    <Button
+        android:id="@+id/btn_clear_query_litepal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="clear"/>
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="null"/>
+
+
+</LinearLayout>

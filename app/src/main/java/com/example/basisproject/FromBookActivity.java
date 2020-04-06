@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.example.basisproject.fromBook.BroadcastTestActivity;
 import com.example.basisproject.fromBook.ContactsActivity;
 import com.example.basisproject.fromBook.FilePersistenceActivity;
+import com.example.basisproject.fromBook.MyDataBaseActivity;
 import com.example.basisproject.fromBook.MyDatabaseHelper;
 import com.example.basisproject.fromBook.RuntimePermissionActivity;
 import com.example.basisproject.fromBook.TalkActivity;
@@ -87,7 +88,7 @@ public class FromBookActivity extends AppCompatActivity {
                     intent=new Intent(FromBookActivity.this, FilePersistenceActivity.class);
                     break;
                 case R.id.btn_sqlite:
-                    myDatabaseHelper.getWritableDatabase();
+                    intent=new Intent(FromBookActivity.this, MyDataBaseActivity.class);
                     break;
                 case R.id.btn_runtimep:
                     intent=new Intent(FromBookActivity.this, RuntimePermissionActivity.class);

@@ -1,6 +1,8 @@
 package com.example.basisproject.Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -22,7 +24,6 @@ public class ContainerActivity extends AppCompatActivity implements AFragment .I
         aFragment=new AFragment().newInstance("2019_ncov");//用newInstance传参数__Activity传数据
         //把AFragment添加到Activity中
         getSupportFragmentManager().beginTransaction().add(R.id.fl_container,aFragment).commitAllowingStateLoss();//将布局文件加载到Activity布局管理器
-
 
 //        mBtnChange=findViewById(R.id.btn_change);
 //        mBtnChange.setOnClickListener(new View.OnClickListener() {

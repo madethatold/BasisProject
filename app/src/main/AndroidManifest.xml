@@ -22,8 +22,10 @@
         android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,17 +33,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_1"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".datastorage.LitePalActivity"></activity>
+        <activity android:name=".fromBook.MyDataBaseActivity" />
+        <activity android:name=".datastorage.FileSaveActivity" />
         <activity
             android:name=".Bookpart_2.MaterialDesign.FruitActivity"
-            android:theme="@style/FruitActivityTheme">
-
-        </activity>
+            android:theme="@style/FruitActivityTheme" />
         <activity
             android:name=".Bookpart_2.MaterialDesign.MaterialTestActivity"
             android:label=":P"
-            android:theme="@style/AppTheme_1">
-
-        </activity>
+            android:theme="@style/AppTheme_1" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"

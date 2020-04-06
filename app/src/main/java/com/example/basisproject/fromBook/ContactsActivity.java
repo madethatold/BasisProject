@@ -22,10 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactsActivity extends AppCompatActivity {
-    private RecyclerView rvContacts;
+    private List<Contacts> contactsList=new ArrayList<>();
 
-    List<String> contactsnameList=new ArrayList<>();
-    List<String> contactsnumList=new ArrayList<>();
+    private RecyclerView rvContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,9 @@ public class ContactsActivity extends AppCompatActivity {
         rvContacts=findViewById(R.id.rv_contacts);//找到RecyclerView控件
         rvContacts.setLayoutManager(new LinearLayoutManager(ContactsActivity.this));
         rvContacts.addItemDecoration(new MyDecoration());//添加分割线
-        rvContacts.setAdapter(new ContactsAdapter(ContactsActivity.this));
+        rvContacts.setAdapter(new ContactsAdapter(contactsList));
+
+
         if (ContextCompat.checkSelfPermission(ContactsActivity.this, Manifest.permission.READ_CONTACTS)!=PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(ContactsActivity.this,new String[]{Manifest.permission.READ_CONTACTS},1);
         }else{
@@ -51,8 +52,10 @@ public class ContactsActivity extends AppCompatActivity {
                 while (cursor.moveToNext()){
                     String displayname=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                     String displaynum=cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                    contactsnameList.add(displayname);
-                    contactsnumList.add(displaynum);
+                    Contacts c=new Contacts();
+                    c.name=displayname;
+                    c.num=displaynum;
+                    contactsList.add(c);
                 }
             }
         }catch (Exception e){
@@ -85,11 +88,5 @@ public class ContactsActivity extends AppCompatActivity {
         }
     }
 
-    public String getname(int p){
-        return contactsnameList.get(p).toString();
-    }
 
-    public String getnum(int p){
-        return contactsnumList.get(p).toString();
-    }
 }

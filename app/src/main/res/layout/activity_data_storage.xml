@@ -10,5 +10,17 @@
         android:id="@+id/btn_sharedpreferences"
         android:textAllCaps="false"
         android:text="Sharedpreferences"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_filesave"
+        android:textAllCaps="false"
+        android:text="file Save"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_litepal"
+        android:textAllCaps="false"
+        android:text="LitePal"/>
 
 </LinearLayout>

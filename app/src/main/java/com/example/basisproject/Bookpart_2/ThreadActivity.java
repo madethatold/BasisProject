@@ -44,6 +44,8 @@ public class ThreadActivity extends AppCompatActivity {
 
         btnChangeText.setOnClickListener(onClick);
 
+
+
     }
 
     class OnClick implements View.OnClickListener{
@@ -66,4 +68,5 @@ public class ThreadActivity extends AppCompatActivity {
             }
         }
     }
+
 }

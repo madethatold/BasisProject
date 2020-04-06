@@ -27,6 +27,7 @@ public class FilePersistenceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_persistence);
         ettest1 = findViewById(R.id.et_test1);
+        
         String inputText=load();
         ettest1.setText(inputText);
         ettest1.setSelection(inputText.length());
@@ -47,7 +48,7 @@ public class FilePersistenceActivity extends AppCompatActivity {
         FileOutputStream fos = null;
         BufferedWriter writer = null;
         try {
-            fos = openFileOutput("data", Context.MODE_PRIVATE);
+            fos = openFileOutput("dataok", Context.MODE_PRIVATE);
             writer = new BufferedWriter(new OutputStreamWriter(fos));
             writer.write(inputText);
         } catch (IOException e) {
@@ -67,7 +68,7 @@ public class FilePersistenceActivity extends AppCompatActivity {
         BufferedReader reader = null;
         StringBuilder content = new StringBuilder();
         try {
-            fis = openFileInput("data");
+            fis = openFileInput("dataok");
             reader = new BufferedReader(new InputStreamReader(fis));
             String line="";
             while ((line=reader.readLine())!=null){
